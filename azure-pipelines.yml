@@ -5,8 +5,12 @@ steps:
   displayName: install
   inputs:
     terraformVersion: 'latest'
+
 - task: TerraformTask@5
-  displayName: init
   inputs:
     provider: 'azurerm'
     command: 'init'
+    backendServiceArm: 'NewSConnect'
+    backendAzureRmStorageAccountName: 'ankitsg'
+    backendAzureRmContainerName: 'statefile'
+    backendAzureRmKey: 'p2.terraform.tfstate'
