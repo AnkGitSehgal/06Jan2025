@@ -1,0 +1,12 @@
+trigger: none
+pool: Jan25
+steps:
+- task: TerraformInstaller@1
+  displayName: install
+  inputs:
+    terraformVersion: 'latest'
+- task: TerraformTask@5
+  displayName: init
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
